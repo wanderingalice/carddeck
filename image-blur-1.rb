@@ -23,7 +23,6 @@ attr_accessor :rows
           newImage[y][x-1] = 1 if rows[y][x-1]
           newImage[y][x+1] = 1 if rows[y][x+1]
         end
-        # puts "#{x}, #{y}, #{rows[y][x]}"
       end
     end
     newImage.each do |row|
@@ -45,5 +44,4 @@ image.output_image
 puts "Original Image"
 image.image_blur
 puts "Image - blurred"
-image.output_image
-puts "Original Image"
+
