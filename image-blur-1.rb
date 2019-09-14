@@ -10,6 +10,7 @@ attr_accessor :rows
       puts row.inspect
     end
   end
+  
 
   def image_blur
 
@@ -34,14 +35,24 @@ end
 
 image = Image.new(
   [
-    [0, 0, 0, 0],
-    [0, 1, 0, 0],
-    [0, 0, 0, 1],
-    [0, 0, 0, 0]
+    [0, 0, 0, 0, 1],
+    [0, 1, 0, 0, 0],
+    [0, 0, 0, 1, 0],
+    [0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 0]
   ])
 
 image.output_image
 puts "Original Image"
+
 image.image_blur
 puts "Image - blurred"
 
+    puts "Now - let's try this Manhattan Distance thing. How far do you want to go?"
+    Manhattan = gets.chomp
+
+    until Manhattan.is_a?(Integer) do
+      Manhattan = gets.chomp
+    end
+
+    puts "Great! Now, we'll blur to a Manhattan distance of #{Manhattan}"
