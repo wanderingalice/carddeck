@@ -32,15 +32,17 @@ module LinkedList
       end
     end
 
-    def reverse_list(list)
-      #put some code here
+    def reverse_list
+      node = @data
+      previous = nil
 
-      while list
-        #something
-        list = list.next_node
+      while node != nil
+        nextnode = node.next_node
+        node.next_node = previous
+        previous = node
+        node = nextnode
       end
-
-      #more code
+      @data = previous
     end
 
     def getnodes(count)
@@ -63,5 +65,7 @@ puts ""
 puts "Ok. Let's get #{count} nodes!"
 
 stack.getnodes(count)
+
+stack.reverse_list
 
 stack.popall
