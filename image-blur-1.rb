@@ -52,6 +52,7 @@ puts "Image - blurred"
     Manhattan = gets.chomp
 
     until Manhattan.is_a?(Integer) do
+      puts "Whoops, that's not an integer. Try again. How far do you want to go?"
       Manhattan = gets.chomp
     end
 
