@@ -45,6 +45,27 @@ module LinkedList
       @data = previous
     end
 
+    def find_infinite
+      node = @data
+      array = []
+
+      while node != nil
+        array << node
+        node = node.next_node
+        if array.include?(node)
+          outcome = "true"
+        end
+        break if outcome == "true"
+      end
+
+      if outcome != "true"
+        puts "False"
+      else 
+        puts "True"        
+      end      
+
+    end
+
     def getnodes(count)
       while count != 0
         puts "What's your value?"
@@ -66,6 +87,4 @@ puts "Ok. Let's get #{count} nodes!"
 
 stack.getnodes(count)
 
-stack.reverse_list
-
-stack.popall
+stack.find_infinite
