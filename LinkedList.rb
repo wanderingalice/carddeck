@@ -53,16 +53,12 @@ module LinkedList
         array << node
         node = node.next_node
         if array.include?(node)
-          outcome = "true"
+          puts "true"
+          return true
         end
-        break if outcome == "true"
       end
-
-      if outcome != "true"
-        puts "False"
-      else 
-        puts "True"        
-      end      
+      puts "false"
+      return false    
 
     end
 
