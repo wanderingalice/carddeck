@@ -1,0 +1,11 @@
+                        Book
+                          |
+Librarian => Library => book_copy => status
+
+Copy
+dd#
+
+
+Status
+-checkout as type of status
+-single page inheritance?
